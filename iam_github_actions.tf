@@ -42,17 +42,18 @@ resource "aws_iam_role" "github_deploy" {
   assume_role_policy = jsonencode({
     Version = "2012-10-17",
     Statement = [{
-      Effect = "Allow",
-      Action = "sts:AssumeRoleWithWebIdentity",
-      Principal = {
-        Federated = aws_iam_openid_connect_provider.github.arn
-      },
+      Effect    = "Allow",
+      Action    = "sts:AssumeRoleWithWebIdentity",
+      Principal = { Federated = aws_iam_openid_connect_provider.github.arn },
       Condition = {
         "StringEquals" = {
           "token.actions.githubusercontent.com:aud" = "sts.amazonaws.com"
         },
-        "StringLike" = {
-          "token.actions.githubusercontent.com:sub" = "repo:litundinu/juice-shop:ref:refs/heads/master"
+        "ForAnyValue:StringLike" = {
+          "token.actions.githubusercontent.com:sub" = [
+            "repo:litundinu/juice-shop:ref:refs/heads/master",
+            "repo:litundinu/juice-shop:environment:production"
+          ]
         }
       }
     }]
