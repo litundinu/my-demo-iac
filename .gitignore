@@ -1,0 +1,39 @@
+# === Terraform ===
+# Local .terraform directories
+**/.terraform/*
+.terraform/*
+
+# Local .terraform lock file
+.terraform.lock.hcl
+
+# State files (hold sensitive info!)
+terraform.tfstate
+terraform.tfstate.backup
+*.tfstate
+variables.tf
+
+# Crash logs (debugging output)
+crash.log
+crash.*.log
+
+# Variable files with secrets
+*.tfvars
+*.tfvars.json
+
+# Ignore override files used for local testing
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Plan output (binary)
+*.plan
+
+# === Editor/OS junk ===
+.DS_Store
+Thumbs.db
+
+# === IDEs ===
+.vscode/
+.idea/
+*.iml

@@ -1,0 +1,20 @@
+region  = ""
+az1     = ""
+az2     = ""
+
+name_prefix = "my-app"
+environment = "production"
+
+vpc_cidr             = ""
+public_subnet1_cidr  = ""
+public_subnet2_cidr  = ""
+private_subnet1_cidr = ""
+private_subnet2_cidr = ""
+
+container_port = 0
+desired_count  = 1
+task_cpu       = 256
+task_memory    = 512
+
+github_repo           = "your-org/your-repo"
+github_branch_pattern = "*"
