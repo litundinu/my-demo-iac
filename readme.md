@@ -92,9 +92,8 @@ It protects the application by filtering malicious traffic using **AWS Managed R
 ## 📊 Logging & Monitoring
 
 - **CloudWatch Logs** enabled for ECS tasks and WAF  
-- WAF logs stored in a dedicated log group:  
-  - Name: `aws-waf-logs-my-app`  
-  - Retention: **7 days**  
+- WAF logs stored in a dedicated log groups
+
 - **Sensitive fields redacted** before logging:  
   - `authorization` header  
   - (extendable to other fields such as `password`)  

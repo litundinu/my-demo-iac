@@ -17,4 +17,4 @@ task_cpu       = 256
 task_memory    = 512
 
 github_repo           = "your-org/your-repo"
-github_branch_pattern = "*"
+github_branch_pattern = ""
